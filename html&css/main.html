@@ -1,0 +1,340 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smp</title>
+    <!--Для адаптивности под другие устройства-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        
+        
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/378800000095820479/c7b2e53c69f3dcbc8966fd52d234ace4_400x400.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="content">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="modal fade" id="walletModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Регистрация кредитной карты</h4>
+                            </div>
+                            <div class="modal-body text-center">
+                                <div class="payment">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-8 text-left">
+                                                <label for="owner">Владелец карты</label>
+                                                <input type="text" class="form-control" id="owner">
+                                            </div>
+                                            <div class="col-md-4 text-left">
+                                                <label for="cvv">CVV код</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-left" id="card-number-field">
+                                            <label for="cardNumber">Номер карты</label>
+                                            <input type="text" class="form-control" id="cardNumber">
+                                        </div>
+                                        <div class="row" style="padding-bottom: 20px">
+                                    
+                                            <div class="col-md-3 text-left" id="expiration-date">
+                                                    <label for="ExpDate">Срок действия</label>
+                                                <select class="form-control" id="ExpDate">
+                                                    <option value="01">Январь</option>
+                                                    <option value="02">Февраль</option>
+                                                    <option value="03">Март</option>
+                                                    <option value="04">Апрель</option>
+                                                    <option value="05">Май</option>
+                                                    <option value="06">Июнь</option>
+                                                    <option value="07">Июль</option>
+                                                    <option value="08">Август</option>
+                                                    <option value="09">Сентябрь</option>
+                                                    <option value="10">Октябрь</option>
+                                                    <option value="11">Ноябрь</option>
+                                                    <option value="12">Декабрь</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 text-left align-self-end">
+                                               
+                                                <select class="form-control">
+                                                    <option value="16"> 2016</option>
+                                                    <option value="17"> 2017</option>
+                                                    <option value="18"> 2018</option>
+                                                    <option value="19"> 2019</option>
+                                                    <option value="20"> 2020</option>
+                                                    <option value="21"> 2021</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 text-left align-self-end" id="credit_cards">
+                                              
+                                                <img src="http://bootstraptema.ru/snippets/form/2017/visa.jpg" id="visa">
+                                                <img src="http://bootstraptema.ru/snippets/form/2017/mastercard.jpg" id="mastercard">
+                                                <img src="http://bootstraptema.ru/snippets/form/2017/amex.jpg" id="amex">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer form-group" id="pay-now">
+                                            <button type="submit" class="btn btn-secondary" id="confirm-purchase">Зарегистрировать</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <form class="form-signin">
+                                <img class="mb-4" src="https://pbs.twimg.com/profile_images/378800000095820479/c7b2e53c69f3dcbc8966fd52d234ace4_400x400.png"
+                                    alt="" width="72" height="72">
+                                <h1 class="h3 mb-3 font-weight-normal">Пожалуйста, войдите</h1>
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Почтовой адрес"
+                                    required="" autofocus="">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Пароль"
+                                    required="">
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" value="remember-me"> Запомнить меня
+                                    </label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+                                <a id="regButton" href="registration.html">Зарегистрироваться</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть окно</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src="https://pbs.twimg.com/profile_images/378800000095820479/c7b2e53c69f3dcbc8966fd52d234ace4_400x400.png"
+                width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+            <span class="navbar-brand">Simple Charging Service</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <!--sr-only для считывателей экрана (для слепых людей)-->
+                        <a class="nav-link" href="main.html">Главная<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="modal" href="#walletModal">Кошелек</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" href="#myModal">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="adminpanel.html">Панель Администратора</a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
+
+        <form action="">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+
+                    <div class="col-2" id="submit"><input class="btn btn-dark" type="submit" value="Подтвердить" style="position: fixed;"></div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://lh3.ggpht.com/j6aNgkpGRXp9PEinADFoSkyfup46-6Rb83bS41lfQC_Tc2qg96zQ_aqZcyiaV3M-Ai4=s180"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Microsoft Word</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>14$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://officeapplications.net/uploads/posts/2018-02/1517515038_2016-1.png"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Microsoft PowerPoint</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>22$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://officeapplications.net/uploads/posts/2018-02/1517515093_2016.png"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Microsoft Excel</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>14$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://officeapplications.net/uploads/posts/2018-02/1517515179_2016.png"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Microsoft Access</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>20$/День</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://myfreesoft.ru/wp-content/uploads/2016/06/yandex-music-logo-150x150.png"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Яндекс музыка</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>18$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="http://is1.mzstatic.com/image/thumb/Purple128/v4/3f/21/9d/3f219d4f-e545-1f1d-0ecf-c6516c738318/source/512x512bb.jpg"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Яндекс почта</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>28$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/05/72/de/0572de17-4eeb-31bb-6467-d2af9b26422f/source/512x512bb.jpg"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Яндекс диск</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>17$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OvHnHlfdA4iPH6fDVzJkr7aT_r1S4C7wYzFUhCIuqPxapE59"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Google карты</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>25$/День</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://android-all-free.ru/images/con5/Google-Drive.jpg"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Google диск</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>22$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="http://www.webmasters.ru/pixs/content/d3ff30bc6ef943998a89dfe42039e1ca.jpg"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Youtube</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>5$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDU3NtRxO8By15F29Kl-1MWpyfCXwL-1hB6P9kF2j4cQPSnbT-og"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Netflix</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>15$/День</span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="description.html"><img src="https://pbs.twimg.com/profile_images/1038075852343242754/C-Sx2WOM_400x400.jpg"
+                                alt="" class="img-thumbnail" width="200" height="200"></a>
+                        <br>
+                        <span class="h5 mb-3 font-weight-normal">Home Box Office</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input type="number m-3" size="3" min="0" placeholder="Кол-во"><br>
+                            <span>23$/День</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">
+                </p>
+                <p>Цена указана для одного дня подписки!</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
